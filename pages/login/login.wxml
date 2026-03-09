@@ -1,0 +1,19 @@
+<!--pages/login/login.wxml-->
+<view class="container">
+  <view class="login-box">
+    <view class="logo">
+      <text class="logo-icon">🍔</text>
+    </view>
+    <text class="app-name">点餐小程序</text>
+    <text class="login-title">登录后享受更多服务</text>
+
+    <button class="wechat-login-btn" bindtap="wechatLogin">
+      <text class="btn-icon">微信</text>
+      <text class="btn-text">微信授权登录</text>
+    </button>
+
+    <button class="back-btn" bindtap="goBack">
+      <text class="back-text">返回首页</text>
+    </button>
+  </view>
+</view>

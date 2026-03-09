@@ -1,0 +1,15 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">欢迎使用点餐小程序</text>
+    <text class="subtitle">美味等你来点</text>
+  </view>
+
+  <view class="content">
+    <view class="order-btn-wrapper">
+      <button class="order-btn" bindtap="goToOrder">
+        <text class="btn-text">去点单</text>
+      </button>
+    </view>
+  </view>
+</view>

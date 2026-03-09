@@ -1,0 +1,10 @@
+<!--pages/order/order.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">点单页面</text>
+  </view>
+
+  <view class="content">
+    <text class="placeholder">点单功能待实现...</text>
+  </view>
+</view>

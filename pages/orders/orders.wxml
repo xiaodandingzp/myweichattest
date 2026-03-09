@@ -1,0 +1,12 @@
+<!--pages/orders/orders.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">我的订单</text>
+  </view>
+
+  <view class="empty-state">
+    <text class="empty-icon">📋</text>
+    <text class="empty-text">暂无订单</text>
+    <text class="empty-hint">快去首页点单吧</text>
+  </view>
+</view>
