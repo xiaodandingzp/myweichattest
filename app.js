@@ -1,3 +1,6 @@
+// 全局常量 - 服务器地址
+const BASE_URL = 'http://8.163.25.65:5000';
+
 // app.js
 App({
   onLaunch() {
@@ -34,7 +37,7 @@ App({
   fetchUserInfo: function (token) {
     const that = this;
     wx.request({
-      url: 'http://8.163.25.65:5000/userinfo',
+      url: BASE_URL + '/userinfo',
       method: 'GET',
       header: {
         'Authorization': token
@@ -89,6 +92,7 @@ App({
 
   // 全局数据
   globalData: {
+    baseUrl: BASE_URL,
     token: null,
     userInfo: null,
     isLoggedIn: false

@@ -1,4 +1,6 @@
 // pages/order/order.js
+const app = getApp();
+
 Page({
   data: {
     products: [] // 商品列表
@@ -12,7 +14,7 @@ Page({
   fetchProducts: function () {
     const that = this;
     wx.request({
-      url: 'http://8.163.25.65:5000/products',
+      url: app.globalData.baseUrl + '/products',
       method: 'GET',
       success: function (res) {
         if (res.data) {

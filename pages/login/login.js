@@ -17,7 +17,7 @@ Page({
         if (loginRes.code) {
           // 调用登录接口
           wx.request({
-            url: 'http://8.163.25.65:5000/login',
+            url: app.globalData.baseUrl + '/login',
             method: 'POST',
             timeout: 5000,
             data: {
