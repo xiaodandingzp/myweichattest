@@ -4,7 +4,8 @@
     <view class="avatar">
       <text class="avatar-text">👤</text>
     </view>
-    <text class="username">用户名：test</text>
+    <text class="username" wx:if="{{isLoggedIn}}">用户名：{{username}}</text>
+    <text class="username" wx:else>未登录</text>
   </view>
 
   <view class="menu-list">
