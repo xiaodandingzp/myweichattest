@@ -5,6 +5,23 @@
   </view>
 
   <view class="content">
-    <text class="placeholder">点单功能待实现...</text>
+    <view class="product-list">
+      <view class="product-item" wx:for="{{products}}" wx:key="index">
+        <view class="product-info">
+          <text class="product-name">{{item.name}}</text>
+          <text class="product-price">{{item.price}}元</text>
+        </view>
+        <view class="product-action">
+          <button class="add-btn" bindtap="addCount" data-index="{{index}}">
+            <text class="add-icon">+</text>
+          </button>
+          <text class="count-text" wx:if="{{item.count > 0}}">{{item.count}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{products.length === 0}}" class="empty">
+      <text class="empty-text">暂无商品</text>
+    </view>
   </view>
 </view>
