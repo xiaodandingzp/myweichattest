@@ -12,10 +12,13 @@
           <text class="product-price">{{item.price}}元</text>
         </view>
         <view class="product-action">
+          <view wx:if="{{item.count > 0}}" class="product-counter">
+            <text class="product-minus" bindtap="minusCount" data-index="{{index}}">-</text>
+            <text class="product-count">{{item.count}}</text>
+          </view>
           <button class="add-btn" bindtap="addCount" data-index="{{index}}">
             <text class="add-icon">+</text>
           </button>
-          <text class="count-text" wx:if="{{item.count > 0}}">{{item.count}}</text>
         </view>
       </view>
     </view>
@@ -23,5 +26,44 @@
     <view wx:if="{{products.length === 0}}" class="empty">
       <text class="empty-text">暂无商品</text>
     </view>
+  </view>
+
+  <!-- 购物车底部栏 -->
+  <view class="cart-bar">
+    <view class="cart-icon-wrap" bindtap="toggleCart">
+      <text class="cart-icon">🛒</text>
+    </view>
+    <view class="cart-info">
+      <text class="total-label">总价：</text>
+      <text class="total-price">{{totalPrice}}元</text>
+    </view>
+    <button class="settle-btn" bindtap="goToSettle">去结算</button>
+  </view>
+
+  <!-- 购物车半窗 -->
+  <view class="cart-overlay" wx:if="{{cartVisible}}" bindtap="toggleCart"></view>
+  <view class="cart-drawer" wx:if="{{cartVisible}}">
+    <view class="drawer-header">
+      <text class="drawer-title">购物车</text>
+      <text class="drawer-close" bindtap="toggleCart">×</text>
+    </view>
+    <scroll-view class="drawer-content" scroll-y>
+      <view wx:if="{{products.length === 0 || totalPrice === 0}}" class="cart-empty">
+        <text class="cart-empty-text">购物车是空的</text>
+      </view>
+      <block wx:else>
+        <view class="cart-item" wx:for="{{products}}" wx:key="index" wx:if="{{item.count > 0}}">
+          <view class="cart-item-info">
+            <text class="cart-item-name">{{item.name}}</text>
+            <text class="cart-item-price">{{item.price}}元</text>
+          </view>
+          <view class="cart-item-action">
+            <text class="cart-minus" bindtap="cartMinusCount" data-index="{{index}}">-</text>
+            <text class="cart-count">{{item.count}}</text>
+            <text class="cart-add" bindtap="cartAddCount" data-index="{{index}}">+</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
   </view>
 </view>
