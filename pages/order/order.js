@@ -109,9 +109,22 @@ Page({
 
   // 去结算
   goToSettle: function () {
-    wx.showToast({
-      title: '去结算待实现',
-      icon: 'none'
+    // 计算加购商品的总数量
+    let totalCount = 0;
+    this.data.products.forEach(item => {
+      totalCount += item.count;
     });
+
+    if (totalCount > 0) {
+      wx.showToast({
+        title: '去结算待实现',
+        icon: 'none'
+      });
+    } else {
+      wx.showToast({
+        title: '请先选购商品',
+        icon: 'none'
+      });
+    }
   }
 });
