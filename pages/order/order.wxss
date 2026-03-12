@@ -133,7 +133,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100rpx;
+  height: 150rpx;
   background-color: #333;
   display: flex;
   align-items: center;
@@ -174,7 +174,7 @@
 
 .settle-btn {
   width: 200rpx;
-  height: 100rpx;
+  height: 150rpx;
   background-color: #1890ff;
   color: #fff;
   font-size: 32rpx;
@@ -191,16 +191,16 @@
   top: 0;
   left: 0;
   right: 0;
-  bottom: 100rpx;
+  bottom: 150rpx;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .cart-drawer {
   position: fixed;
-  bottom: 100rpx;
+  bottom: 150rpx;
   left: 0;
   right: 0;
-  height: 500rpx;
+  height: 600rpx;
   background-color: #fff;
   border-radius: 24rpx 24rpx 0 0;
   display: flex;
@@ -208,6 +208,7 @@
 }
 
 .drawer-header {
+  flex-shrink: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -228,7 +229,10 @@
 
 .drawer-content {
   flex: 1;
+  height: 500rpx;
   padding: 20rpx 50rpx 20rpx 20rpx;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .cart-empty {
